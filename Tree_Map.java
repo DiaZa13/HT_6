@@ -39,6 +39,37 @@ public class Tree_Map<K,V> extends AbstractMap<K,V>{
 		return null;
 	}
 
+	@Override
+	public Set getMonstruo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set getHechizo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set getTrampa() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean Empty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public int cantCards(int type) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 	
 }

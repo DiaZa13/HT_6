@@ -8,6 +8,10 @@ public interface InterMap<K,V> {
 	public Set getCards();
 	public K searchCards(K key);
 	public Set getOrdercards();
-
+	public Set getMonstruo();
+	public Set getHechizo();
+	public Set getTrampa();
+	public boolean Empty();
+	public int cantCards(int type);
 
 }

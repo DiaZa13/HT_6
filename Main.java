@@ -4,8 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
 	public static void main (String [] args) throws IOException {
@@ -65,7 +67,7 @@ public class Main {
 		
 		switch (menu) {
 		
-		case("1"):
+		/**case("1"):
 			System.out.println("Ingrese el nombre de la carta que desea agregar: ");
 			userKey = read.nextLine();
 			if(map.searchCards(userKey) != (null)) {
@@ -76,15 +78,48 @@ public class Main {
 		break;
 		
 		case("2"):
-			break;
+			System.out.println("Ingrese el nombre de la carta de la cual desea conocer su tipo: ");
+			userKey = read.nextLine();
+			map.getCard(userKey);
+		break;
+		
 		case("3"):
-			break;
+			if(user.Empty()){
+				System.out.println("No hay elementos en la coleccion");
+			}else {
+				System.out.println("La cantidad de cartas de tipo Monstruo son: " + user.cantCards(0));
+				System.out.println("La cantidad de cartas de tipo Hechizo son: " + user.cantCards(1));
+				System.out.println("La cantidad de cartas de tipo Trampa son: " + user.cantCards(2));
+				System.out.println(user.getCards());
+			}
+
+
+		break;
 		case("4"):
-			break;
+			if(user.Empty()) {
+				System.out.println("No hay elementos en la coleccion");
+			}
+			else {
+				System.out.println("La cantidad de cartas de tipo Monstruo son: " + user.cantCards(0));
+				System.out.println("La cantidad de cartas de tipo Hechizo son: " + user.cantCards(1));
+				System.out.println("La cantidad de cartas de tipo Trampa son: " + user.cantCards(2));
+				System.out.println(user.getHechizo());
+				System.out.println(user.getMonstruo());
+				System.out.println(user.getTrampa());
+			}
+		break;*/
+		
 		case("5"):
-			break;
+			
+			System.out.println(map.getCards());
+		
+		break;
+		
 		case("6"):
-			break;
+
+			System.out.println(map.getMonstruo());
+			//System.out.println(map.getTrampa());
+		break;
 				
 		}
 			
