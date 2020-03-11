@@ -3,9 +3,6 @@ import java.util.*;
 public class LinkedHash_Map<K,V> extends AbstractMap<K,V>{
 
 	protected Map<K,V> cards;
-	protected int contMonster = 0;
-	protected int contHechizo = 0;
-	protected int contTrampa = 0;
 	
 	public LinkedHash_Map() {
 		cards = new LinkedHashMap<K,V>();
@@ -64,19 +61,16 @@ public class LinkedHash_Map<K,V> extends AbstractMap<K,V>{
 		for(Map.Entry m:cards.entrySet()) {
 			if (m.getValue().equals("Hechizo")) {
 				hechizo.add(m.getKey()+"|"+m.getValue()); 
-				contHechizo += 1;
 				}
 		}
 		for(Map.Entry m:cards.entrySet()) {
 			if (m.getValue().equals("Trampa")) {
 				hechizo.add(m.getKey()+"|"+m.getValue()); 
-				contTrampa += 1;
 				}
 		}
 		
 		for(Map.Entry m:cards.entrySet()) {
 			if (m.getValue().equals("Monstruo")) {
-				contMonster += 1;
 				hechizo.add(m.getKey()+"|"+m.getValue()); 
 				}
 		}
@@ -94,7 +88,27 @@ public class LinkedHash_Map<K,V> extends AbstractMap<K,V>{
 	@Override
 	public int cantCards(int type) {
 		// TODO Auto-generated method stub
+		int contMonster = 0;
+		int contHechizo = 0;
+		int contTrampa = 0;
 		int cant = 0;
+		for(Map.Entry m:cards.entrySet()) {
+			if (m.getValue().equals("Hechizo")) {
+				contHechizo += 1;
+				}
+		}
+		for(Map.Entry m:cards.entrySet()) {
+			if (m.getValue().equals("Trampa")) {
+				contTrampa +=1;
+				}
+		}
+		
+		for(Map.Entry m:cards.entrySet()) {
+			if (m.getValue().equals("Monstruo")) {
+				contMonster +=1;
+				}
+		}
+
 		if(type == 0)
 			cant = contHechizo;
 		else if(type == 1)
@@ -103,7 +117,6 @@ public class LinkedHash_Map<K,V> extends AbstractMap<K,V>{
 			cant = contMonster;
 		return cant;
 	}
-
 
 	
 }
