@@ -9,6 +9,11 @@ public class Hash_Map<K,V> implements InterMap<K,V>{
 	}
 
 
+	/**
+	 * pushCards
+	 * pre:
+	 * post: adds new items to the map
+	 */
 	@Override
 	public void pushCards(K key, V value) {
 		// TODO Auto-generated method stub
@@ -16,7 +21,12 @@ public class Hash_Map<K,V> implements InterMap<K,V>{
 		
 	}
 
-
+	/**
+	 * getCard
+	 * pre: the map is full
+	 * post: returns the value of the key
+	 * @return value: the value of the key that the user gave
+	 */
 	@Override
 	public V getCard(K key) {
 		// TODO Auto-generated method stub
@@ -25,25 +35,35 @@ public class Hash_Map<K,V> implements InterMap<K,V>{
 		return value;
 	}
 
-
+	/**
+	 * getCards
+	 * pre: the map is full
+	 * post: returns an arraylist with all the cards on the map
+	 * @return cardsArray: array with all the cards
+	 */
 	@Override
 	public ArrayList<String> getCards() {
 		// TODO Auto-generated method stub
-		ArrayList<String> cardsSet = new ArrayList<String>(); 
+		ArrayList<String> cardsArray = new ArrayList<String>(); 
 		Iterator iterador = cards.entrySet().iterator();
     	//Iterator<Map.Entry<String, Float>> iterador = listaProductos.entrySet().iterator();
 		Map.Entry producto;
 		while (iterador.hasNext()) {
 			producto = (Map.Entry) iterador.next();
 			//producto = iterador.next(); Si se usase tambien la otra linea comentada.
-			cardsSet.add(producto.getKey() + "|" + producto.getValue());
+			cardsArray.add(producto.getKey() + "|" + producto.getValue());
 			}
 		
-		return cardsSet;
+		return cardsArray;
 
 	}
 
-
+	/**
+	 * searchCards
+	 * pre: the map is full
+	 * post: returns the key if this is on the map
+	 * @return vKey: the key that the user gave
+	 */
 	@Override
 	public K searchCards(K key) {
 		K vkey = null;
@@ -55,7 +75,12 @@ public class Hash_Map<K,V> implements InterMap<K,V>{
 		return vkey;
 	}
 
-
+	/**
+	 * getOrderCards
+	 * pre: the map is full and disorded
+	 * post: returns an arraylist with all the cards order by type
+	 * @returns hechizo: array with the order cards
+	 */
 	@Override
 	public ArrayList getOrdercards() {
 		// TODO Auto-generated method stub
@@ -79,14 +104,24 @@ public class Hash_Map<K,V> implements InterMap<K,V>{
 		return hechizo;
 	}
 
-
+	/**
+	 * Empty
+	 * pre:
+	 * post: returns if the map is empty
+	 * @return 
+	 */
 	@Override
 	public boolean Empty() {
 		// TODO Auto-generated method stub
 		return cards.isEmpty();
 	}
 
-
+	/**
+	 * cantCards
+	 * pre: the map is full
+	 * post: returns the quantity of each type of the cards on the map
+	 * @return cant
+	 */
 	@Override
 	public int cantCards(int type) {
 		// TODO Auto-generated method stub
