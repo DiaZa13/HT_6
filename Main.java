@@ -68,11 +68,12 @@ public class Main {
 		do {
 			System.out.println("----------------------- JUEGO DE CARTAS -----------------------");
 			System.out.println("1. Agregar una carta a mi coleccion");
-			System.out.println("2. Buscar tipo de una carta");
-			System.out.println("3. Informacion de mi coleccion (nombre,tipo y cantidad de cartas)");
-			System.out.println("4. Informacion de mi coleccion (nombre,tipo y cantidad de cartas) ordenada por tipo");
-			System.out.println("5. Informacion de todas las cartas existentes (nombre,tipo y cantidad de cartas)");
-			System.out.println("6. Informacion de todas las cartas existentes (nombre,tipo y cantidad de cartas) ordenadas por tipo");
+			System.out.println("2. Buscar el tipo de una carta");
+			System.out.println("3. Informacion de mi coleccion (nombre, tipo y cantidad de cartas)");
+			System.out.println("4. Informacion de mi coleccion (nombre, tipo y cantidad de cartas) ordenada por tipo");
+			System.out.println("5. Informacion de todas las cartas existentes (nombre, tipo y cantidad de cartas)");
+			System.out.println("6. Informacion de todas las cartas existentes (nombre, tipo y cantidad de cartas) ordenadas por tipo");
+			System.out.println("7. Salir");
 			System.out.print("Ingrese el numero de la opcion que desee: ");
 			menu = read.nextLine();
 			tmenu = MenuInvalido(menu);
@@ -105,8 +106,8 @@ public class Main {
 					System.out.println("No hay elementos en la coleccion del usuario");
 				}else {
 					last = user.getCards().size();
-					System.out.println("La cantidad de cartas en la coleccion del usuario son: "+last);
-					System.out.println("Las cartas en la coleccion del usuario son: ");
+					System.out.println("La cantidad de cartas en mi coleccion son: "+last);
+					System.out.println("Las cartas en mi coleccion son: ");
 					for(int a = 0; a < last;a++)
 						System.out.println("-"+user.getCards().get(a));
 				}
@@ -130,10 +131,10 @@ public class Main {
 		
 			case("5"):
 				last = map.getCards().size();
-				System.out.println("La cantidad de cartas en la coleccion general son: "+last);
-				System.out.println("Las cartas en la coleccion general son: ");
+				System.out.println("La cantidad de cartas existentes son: "+last);
+				System.out.println("Las cartas existentes son: ");
 				for(int a = 0; a < last;a++)
-					System.out.println(map.getCards().get(a));
+					System.out.println("*"+map.getCards().get(a));
 		
 			break;
 		
@@ -141,12 +142,13 @@ public class Main {
 				last = map.getOrdercards().size();
 				System.out.println();
 				System.out.println("La cantidad de cartas existentes por tipo son: ");
-				System.out.println("-Hechizo: "+ map.cantCards(0)+" cartas");
-				System.out.println("-Trampa: "+ map.cantCards(1)+" cartas");
-				System.out.println("-Monstruo: "+ map.cantCards(2)+" cartas");
+				System.out.println("*Hechizo: "+ map.cantCards(0)+" cartas");
+				System.out.println("*Trampa: "+ map.cantCards(1)+" cartas");
+				System.out.println("*Monstruo: "+ map.cantCards(2)+" cartas");
 				System.out.println();
+				System.out.println("Las cartas existentes ordenadas por tipo son: ");
 				for(int a = 0; a < last;a++)
-					System.out.println(map.getOrdercards().get(a));
+					System.out.println("*"+map.getOrdercards().get(a));
 			break;	
 			}
 		}while(!menu.equals("7"));
