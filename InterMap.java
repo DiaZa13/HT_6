@@ -1,17 +1,13 @@
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public interface InterMap<K,V> {
 	
 	public void pushCards(K key, V value);
 	public V getCard(K key);
-	public Set getCards();
+	public ArrayList getCards();
 	public K searchCards(K key);
-	public Set getOrdercards();
-	public Set getMonstruo();
-	public Set getHechizo();
-	public Set getTrampa();
-	public boolean Empty();
+	public ArrayList getOrdercards();
 	public int cantCards(int type);
+	public boolean Empty();
 
 }

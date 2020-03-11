@@ -9,9 +9,9 @@ public class FactoryMap<K,V>  {
 			case "1":
 				return new Hash_Map();
 			case "2":
-				//return new Tree_Map();
+				return new Tree_Map();
 			case "3": 
-				//return new LinkedHash_Map();				
+				return new LinkedHash_Map();				
 		}
 		return null;
 	}

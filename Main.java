@@ -23,9 +23,9 @@ public class Main {
 		
 		//Creating the main map
 		//Change to variable or can be initialized using any Map
-		InterMap map = FM.getInitialization("1");
+		InterMap map = FM.getInitialization("2");
 		//Creating user's map
-		InterMap user = FM.getInitialization("1");
+		InterMap user = FM.getInitialization("2");
 		
 		 //Change to variable
 		BufferedReader in = new BufferedReader(new FileReader("cards_desc.txt"));
@@ -67,7 +67,7 @@ public class Main {
 		
 		switch (menu) {
 		
-		/**case("1"):
+		case("1"):
 			System.out.println("Ingrese el nombre de la carta que desea agregar: ");
 			userKey = read.nextLine();
 			if(map.searchCards(userKey) != (null)) {
@@ -80,45 +80,45 @@ public class Main {
 		case("2"):
 			System.out.println("Ingrese el nombre de la carta de la cual desea conocer su tipo: ");
 			userKey = read.nextLine();
-			map.getCard(userKey);
+			System.out.println(map.getCard(userKey));
 		break;
 		
 		case("3"):
 			if(user.Empty()){
 				System.out.println("No hay elementos en la coleccion");
 			}else {
-				System.out.println("La cantidad de cartas de tipo Monstruo son: " + user.cantCards(0));
-				System.out.println("La cantidad de cartas de tipo Hechizo son: " + user.cantCards(1));
-				System.out.println("La cantidad de cartas de tipo Trampa son: " + user.cantCards(2));
-				System.out.println(user.getCards());
+				for(int a = 0; a < user.getCards().size();a++)
+					System.out.println(user.getCards().get(a));
 			}
 
-
-		break;
+		break; 
 		case("4"):
 			if(user.Empty()) {
 				System.out.println("No hay elementos en la coleccion");
 			}
 			else {
-				System.out.println("La cantidad de cartas de tipo Monstruo son: " + user.cantCards(0));
-				System.out.println("La cantidad de cartas de tipo Hechizo son: " + user.cantCards(1));
-				System.out.println("La cantidad de cartas de tipo Trampa son: " + user.cantCards(2));
-				System.out.println(user.getHechizo());
-				System.out.println(user.getMonstruo());
-				System.out.println(user.getTrampa());
+				System.out.println(user.getOrdercards());
 			}
-		break;*/
+		break;
 		
 		case("5"):
-			
-			System.out.println(map.getCards());
+			for(int a = 0; a < map.getCards().size()-1;a++)
+				System.out.println(map.getCards().get(a));
 		
 		break;
 		
 		case("6"):
+			int last = map.getOrdercards().size();
+			System.out.println();
+			System.out.println("La cantidad de cartas existentes por tipo son: ");
+			System.out.println("-Hechizo: "+ map.cantCards(0)+" cartas");
+			System.out.println("-Trampa: "+ map.cantCards(1)+" cartas");
+			System.out.println("-Monstruo: "+ map.cantCards(2)+" cartas");
+			System.out.println();
+			for(int a = 0; a < last;a++)
+				System.out.println(map.getOrdercards().get(a));
 
-			System.out.println(map.getMonstruo());
-			//System.out.println(map.getTrampa());
+
 		break;
 				
 		}
