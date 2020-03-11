@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Hash_Map<K,V> extends AbstractMap<K,V>{
+public class Hash_Map<K,V> implements InterMap<K,V>{
 	
 	protected Map<K,V> cards;
 	

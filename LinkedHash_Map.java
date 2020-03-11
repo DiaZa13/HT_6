@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LinkedHash_Map<K,V> extends AbstractMap<K,V>{
+public class LinkedHash_Map<K,V> implements InterMap<K,V>{
 
 	protected Map<K,V> cards;
 	

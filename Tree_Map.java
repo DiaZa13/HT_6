@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Tree_Map<K,V> extends AbstractMap<K,V>{
+public class Tree_Map<K,V> implements InterMap<K,V>{
 	
 	protected TreeMap<K, V> cards;
 	

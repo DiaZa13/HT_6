@@ -3,7 +3,7 @@ public class FactoryMap<K,V>  {
 
 	//Should implement the case code
 	
-	public AbstractMap<K,V> getInitialization(String num){
+	public InterMap<K,V> getInitialization(String num){
 		
 		switch(num) {
 			case "1":
